@@ -18,6 +18,11 @@ public class AccountController {
 	@Autowired
 	TranscationService transcationService;
  
+	/**
+	 * This API used for fund transfer
+	 * @param requestBody : it consist field fromAccount,toAccount ,amount
+	 * @return it return message
+	 */
 	@PostMapping("/transcation")
 	 public ResponseEntity<String> saveUser(@RequestBody Map<String,String> requestBody){
 		   transcationService.saveTranjaction(requestBody.get("fromAccount"),requestBody.get("toAccount"), requestBody.get("amount"), "debit");
